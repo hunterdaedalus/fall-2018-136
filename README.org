@@ -29,3 +29,9 @@
 - [[https://www.masteringemacs.org/reading-guide][Mastering Emacs reading guide]]
 - [[http://sachachua.com/blog/2013/05/how-to-learn-emacs-a-hand-drawn-one-pager-for-beginners/][How to learn Emacs]]
 - [[http://cestlaz.github.io/stories/emacs][Using Emacs video series]]
+
+* Resources
+** Unix Command Line / Shell
+1) [[https://hellowebbooks.com/learn-command-line/][Learn the Command Line]] - Mac version
+2) [[https://www.codecademy.com/learn/learn-the-command-line][Learn the Command Line]]
+3) [[http://linuxcommand.org/]]
