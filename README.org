@@ -1,0 +1,31 @@
+* Main Syllabus Links
+- [[http://maryash.github.io/135/2018_fall.html][Main 135/136 page]]
+- [[https://maryash.github.io/135/syllabus_136.html][136 Syllabus]]
+- [[https://maryash.github.io/135/syllabus_135.html][135 Syllabus]]
+
+
+* Lab instructions:
+** First time preparation
+- Make a *private& GitHub repo named *csci13600-labs*
+- Invite me as a collaborator with write priviliges (settings, collaborators & teams)
+** For each lab
+- Each lab will be in it's own directory under the *labs* folder in
+  this repo. You can view it as a web page or clone this repo for
+  updated starter and data files as appropriate.
+- Create a new directory in your *csci136500-labs* repo with the exact
+  same name as the lab you are completing (*lab_01*, *lab_02* etc.).
+- Create a Readme.org or Readme.md file with any specific information
+  you want to communicate to me with respect to the lab.
+- You *must* commit and push the lab by the end of the lab period. If
+  the final due date is extended beyond the class time, you must still
+  push by the end of class and then update your repo by the final due
+  date.
+- Some labs might also be submitted to Gradescope using the directions
+  supplied in 13500
+
+
+
+* Emacs links
+- [[https://www.masteringemacs.org/reading-guide][Mastering Emacs reading guide]]
+- [[http://sachachua.com/blog/2013/05/how-to-learn-emacs-a-hand-drawn-one-pager-for-beginners/][How to learn Emacs]]
+- [[http://cestlaz.github.io/stories/emacs][Using Emacs video series]]
