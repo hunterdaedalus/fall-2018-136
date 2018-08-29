@@ -6,7 +6,7 @@
 
 * Lab instructions:
 ** First time preparation
-- Make a *private& GitHub repo named *csci13600-labs*
+- Make a *private* GitHub repo named *csci13600-labs*
 - Invite me as a collaborator with write priviliges (settings, collaborators & teams)
 ** For each lab
 - Each lab will be in it's own directory under the *labs* folder in
