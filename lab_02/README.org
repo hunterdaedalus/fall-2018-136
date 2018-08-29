@@ -1,8 +1,8 @@
-* Lab 1
+* Lab 2
 
 * Instructions
-- make a directory under your *csci13600-labs* repo named *lab_01*
-- Name the program for each task as specified in the actual lab assignment.
+- make a directory under your *csci13600-labs* repo named *lab_02*
+- Name the program for each task as specified in the actual lab assignment
 - Upper and lower case matter. You must use the exact directory and
   filenames as specified. 
 - Input and output specifications matter. You must take input exactly
@@ -12,4 +12,4 @@
 - Only add source code files to the repo
 
 * Lab
-- The actual lab can be found here: [[https://maryash.github.io/135/labs/lab_01.html]]
+- The actual lab can be found here: [[https://maryash.github.io/135/labs/lab_02.html]]
