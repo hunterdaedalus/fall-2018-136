@@ -12,7 +12,7 @@
 - Each lab will be in it's own directory under the *labs* folder in
   this repo. You can view it as a web page or clone this repo for
   updated starter and data files as appropriate.
-- Create a new directory in your *csci136500-labs* repo with the exact
+- Create a new directory in your *csci13600-labs* repo with the exact
   same name as the lab you are completing (*lab_01*, *lab_02* etc.).
 - Create a Readme.org or Readme.md file with any specific information
   you want to communicate to me with respect to the lab.

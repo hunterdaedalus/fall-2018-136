@@ -1,0 +1,15 @@
+* Lab 1
+
+* Instructions
+- make a directory under your *csci1300-labs* repo named *lab_01*
+- Name the program for each task as taska.cpp, taskb.cpp etc.
+- Upper and lower case matter. You must use the exact directory and
+  filenames as specified. 
+- Input and output specifications matter. You must take input exactly
+  as specified and output must match the required output exactly.
+- In addition to pushing your source code (cpp files) here, also
+  submit this lab via gradescope.
+- Only add source code files to the repo
+
+* Lab
+- The actual lab can be found here: [[https://maryash.github.io/135/labs/lab_01.html]]
