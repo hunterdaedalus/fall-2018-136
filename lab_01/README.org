@@ -1,7 +1,7 @@
 * Lab 1
 
 * Instructions
-- make a directory under your *csci1300-labs* repo named *lab_01*
+- make a directory under your *csci13600-labs* repo named *lab_01*
 - Name the program for each task as taska.cpp, taskb.cpp etc.
 - Upper and lower case matter. You must use the exact directory and
   filenames as specified. 
