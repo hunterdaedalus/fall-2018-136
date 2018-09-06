@@ -1,0 +1,12 @@
+main: main.o circ_funcs.o
+	g++ -o main main.o circ_funcs.o
+
+main.o: main.cpp circ_funcs.h
+	g++ -c main.cpp
+
+circ_funcs.o: circ_funcs.cpp circ_funcs.h
+	g++ -c circ_funcs.cpp
+
+clean:
+	rm -f main.o circ_funcs.o
+

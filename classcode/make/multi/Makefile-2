@@ -1,0 +1,16 @@
+CXXFLAGS=-std=c++14
+LDFLAGS=-lm
+OBJECTS=main.o circ_funcs.o
+
+main: main.o circ_funcs.o
+	g++ -o main $(LDFLAGS) main.o circ_funcs.o
+
+main.o: main.cpp circ_funcs.h
+	g++ $(CXXFLAGS) -c main.cpp
+
+circ_funcs.o: circ_funcs.cpp circ_funcs.h
+	g++ $(CXXFLAGS) -c circ_funcs.cpp
+
+clean:
+	rm -f $(OBJECTS)
+
