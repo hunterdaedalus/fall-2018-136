@@ -1,4 +1,4 @@
-* Lab Testin
+* Lab Testing
 
 * Instructions
 - make a directory under your *csci13600-labs* repo named *lab_testing*
