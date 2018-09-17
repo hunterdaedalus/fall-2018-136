@@ -1,0 +1,34 @@
+* Lab Testin
+
+* Instructions
+- make a directory under your *csci13600-labs* repo named *lab_testing*
+- create a file named pig.cpp which contains a single function:
+#+BEGIN_SRC c++
+string piglatinify(string){
+// function would go here
+
+}
+#+END_SRC
+- create a file named pig.h with the prototype:
+#+BEGIN_SRC c++
+string piglatinify(string);
+#+END_SRC
+- create a file named *tests.cpp* that includes the catch tests for piglatinify. It should include *catch.hpp* and also *#define CATCH_CONFIG_MAIN*
+- create a Makefile that builds the tests
+
+
+At the end of the lab you should be able to build and run all the
+tests but since you don't have to actually write the piglatinify routine the 
+tests will fail.
+
+* Extras
+If you have time, you could (but this isn't required):
+1. Write the piglatinify routine so that it passes the tests.
+2. Add a main routine and modify the Makefile so that you could build *main* or *tests*.
+
+* NOTES
+Since you're working with a partner make sure that:
+- You have both peoples names in the README file
+- Both of your repos have the same final lab files.
+
+
