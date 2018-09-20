@@ -58,4 +58,4 @@ function (it can also hold everything else if you want) and one named
   in the lab.
 
 * Lab 
-- The actual lab can be found here: [[https://maryash.github.io/135/labs/lab_02.html]]
+- The actual lab can be found here: [[https://maryash.github.io/135/labs/lab_03.html]]
