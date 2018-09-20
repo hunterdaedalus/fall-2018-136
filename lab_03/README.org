@@ -1,0 +1,61 @@
+* Lab 3
+
+* Instructions
+- make a directory under your *csci13600-labs* repo named *lab_03*
+- Name the program for each task as specified in the actual lab assignment
+- Upper and lower case matter. You must use the exact directory and
+  filenames as specified. 
+
+
+
+* IMPORTANT CHANGES TO LAB
+Instead of following the lab specifications exactly you are going to
+create a single program. You can use as many *cpp* and *h* files as
+you like but there must be one named *main.cpp* that holds the *main*
+function (it can also hold everything else if you want) and one named
+*tests.cpp* that will drive the tests.
+** Repo file Structure
+- Instead of separate programs, the lab will have one function for
+  each task (plus any extra functions you feel you need to write).
+
+- Make sure to have a *Makefile* with the first target being
+  *main*. That target should build an executable named *main* that
+  when run should run all the tasks and print out output. It should be
+  clear which task is associated with which input and output.
+
+- Have a target named *tests* which will build the tests for this
+  lab. It should create an executable named *tests* which when run,
+  will execute the tests. You must provide what you feel are
+  sufficient tests to show that each task works but you do not have to
+  test exhaustively as we discussed in class.
+
+- Have a target *clean* which removes the *.o* files. 
+
+- Make sure to add *catch.hpp* to the repo.
+
+- Don't add *.o* files or executables to the repo
+
+- Note any issues in the README file.
+
+** Lab structure
+*** Task A
+- Write a function named *double east_storage(string s)* which takes
+  as a parameter a string representing a date and returns the storage
+  as indicated in the lab.
+*** Task B
+- Write a function named *double min_storage()* which returns the minimum
+  storage in the east basin in 2016
+- Write a function named *double max_storage()* which returns the maximum
+  storage in the east basin in 2016
+*** Task C
+- Write a function named *string compare(string date1, string date2)*
+  which will build and return a string in the form of the output
+  indicated in the lab. This will be a multiline string with embedded
+  newlins.
+*** Task D
+- Write a function *string reverse(string date1, string date2)* which
+  will build and return a string in the form of the output specified
+  in the lab.
+
+* Lab 
+- The actual lab can be found here: [[https://maryash.github.io/135/labs/lab_02.html]]
