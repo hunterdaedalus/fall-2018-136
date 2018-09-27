@@ -304,7 +304,7 @@ given the side =length=.
    :CUSTOM_ID: task-f-upside-down-trapezoid
    :END:
 
-Write a function ~string trapeziod(int width, int height)~ that
+Write a function ~string trapezoid(int width, int height)~ that
 returns as tring representing  an upside-down trapezoid of
 given =width= and =height=.
 
