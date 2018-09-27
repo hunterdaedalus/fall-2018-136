@@ -1,0 +1,539 @@
+#+BEGIN_HTML
+  <div id="MathJax_Message" style="display: none;">
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="container-lg px-3 my-5 markdown-body">
+#+END_HTML
+
+* Lab 4. Printing Shapes
+  :PROPERTIES:
+  :CUSTOM_ID: lab-4-printing-shapes
+  :END:
+
+[[https://i.imgur.com/mbfkIep.gif]]
+
+** General notes
+
+Requirements:
+- Makefile with at least the following targets
+  - main: build an executable named *main*. This should be the first target
+  - tests: builds the tests under the name *tests*
+  - clean: removes the .o files
+
+- Readme.md or Readme.org with any notes
+- Include all the program files in the repo (.cpp, .h, catch.hpp,
+  Makefile) but not .o files or exectables.
+
+Each task will describe a function that will be part of your
+program. When you run *main* it should show that each works in task
+order and in a way that it's clear that they work. If anything doesn't
+work, please make a note in the Readme file.
+
+When the tests are run, all tasks should be tested. There should be a
+TEST_CASE for each task with sufficient tests to show that the task
+works. You do not need to test exhaustively. 
+
+For this lab the tests will mostly be string comparisons. 
+
+** Task A. Box
+   :PROPERTIES:
+   :CUSTOM_ID: task-a-box
+   :END:
+
+Write a function ~string box(int width, int height)~ that takes as parameters =width= and
+=height= and returns a string representing  a solid rectangular box of the requested size using
+asterisks.
+
+When run from main, print out an extra newline or two after the string
+to make the separations clear.
+
+*** Example:
+    :PROPERTIES:
+    :CUSTOM_ID: example
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input width: 7
+    Input height: 4
+
+    Shape:
+    *******
+    *******
+    *******
+    *******
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+*** Hint:
+    :PROPERTIES:
+    :CUSTOM_ID: hint
+    :END:
+
+-  First find how to print one row of stars (print the asterisk
+   character =width= times followed by end-of-line).
+-  Then, once you know how to print one line of stars, repeat it
+   =height= times (using a loop).
+
+** Task B. Checkerboard
+   :PROPERTIES:
+   :CUSTOM_ID: task-b-checkerboard
+   :END:
+
+Write a function ~string checkerboard(int width, int height)~ that
+takes as parameters =width=
+and =height= and returns a string representing a rectangular checkerboard of the requested size
+using asterisks and spaces (alternating).
+
+*** Example:
+    :PROPERTIES:
+    :CUSTOM_ID: example-1
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input width: 11
+    Input height: 6
+
+    Shape:
+    * * * * * *
+     * * * * * 
+    * * * * * *
+     * * * * *
+    * * * * * *
+     * * * * *
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+*** Hint:
+    :PROPERTIES:
+    :CUSTOM_ID: hint-1
+    :END:
+
+You used nested loops in the previous task that looked probably like
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    for (int row = 0; row < height; row++) {
+        for (int col = 0; col < width; col++) {
+
+            ...
+        
+        }
+    }
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+Inside the loops, you can add an =if= statement that will be
+conditionally printing asterisk =*= or =(space)= depending on the
+coordinates =row= and =col=.
+
+** Task C.Cross
+   :PROPERTIES:
+   :CUSTOM_ID: task-c-cross
+   :END:
+
+Write a function ~string cross(int size)~ that takes as a parameter
+=size=, and returns a string representing a diagonal cross of that dimension.
+
+*** Example:
+    :PROPERTIES:
+    :CUSTOM_ID: example-2
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input size: 8
+
+    Shape:
+    *      *
+     *    *
+      *  *
+       **
+       **
+      *  *
+     *    *
+    *      *
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+** Task D. Lower triangle
+   :PROPERTIES:
+   :CUSTOM_ID: task-d-lower-triangle
+   :END:
+
+Write a function ~string lower(int length)~ that returns a string representing the bottom-left half of a
+square, given the side =length=.
+
+*** Example:
+    :PROPERTIES:
+    :CUSTOM_ID: example-3
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input side length: 6
+
+    Shape:
+    *
+    **
+    ***
+    ****
+    *****
+    ******
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+** Task E. Upper triangle
+   :PROPERTIES:
+   :CUSTOM_ID: task-e-upper-triangle
+   :END:
+
+Write a function ~string upper(int length)~ that returns a string representing the top-right half of a square,
+given the side =length=.
+
+*** Example:
+    :PROPERTIES:
+    :CUSTOM_ID: example-4
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input side length: 5
+
+    Shape:
+    *****
+     ****
+      ***
+       **
+        *
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+** Task F. Upside-down trapezoid
+   :PROPERTIES:
+   :CUSTOM_ID: task-f-upside-down-trapezoid
+   :END:
+
+Write a function ~string trapeziod(int width, int height)~ that
+returns as tring representing  an upside-down trapezoid of
+given =width= and =height=.
+
+However, if the input height is impossibly large for the given width,
+then the program should report, =Impossible shape!=
+
+*** Example
+1:
+    :PROPERTIES:
+    :CUSTOM_ID: example-1
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input width: 12
+    Input height: 5
+
+    Shape:
+    ************
+     **********
+      ********
+       ******
+        ****
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+*** Example
+2:
+    :PROPERTIES:
+    :CUSTOM_ID: example-2
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input width: 12
+    Input height: 7
+
+    Impossible shape!
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+*** Hint:
+    :PROPERTIES:
+    :CUSTOM_ID: hint-2
+    :END:
+
+You can start with the number of
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    spaces = 0;
+    stars = width;
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+On each line, print *that number of spaces* followed by *that number of
+stars*. After that, the number of spaces gets incremented by 1, while
+the number of stars gets decremented by 2:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    spaces += 1;
+    stars -= 2;
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+** Task G. Checkerboard(3x3)
+   :PROPERTIES:
+   :CUSTOM_ID: task-g-checkerboard-3x3
+   :END:
+
+Write a function ~string checkerboard(int width, int height)~ that
+takes as input =width= and =height= and returns a string representing
+a checkerboard of 3 by 3 squares (It
+should work even if the input dimensions are not a multiple of three.).
+
+*** Example
+1:
+    :PROPERTIES:
+    :CUSTOM_ID: example-1-1
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input width: 16
+    Input height: 11
+
+    Shape:
+    ***   ***   ***
+    ***   ***   ***
+    ***   ***   ***
+       ***   ***   *
+       ***   ***   *
+       ***   ***   *
+    ***   ***   ***
+    ***   ***   ***
+    ***   ***   ***
+       ***   ***   *
+       ***   ***   *
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+*** Example
+2:
+    :PROPERTIES:
+    :CUSTOM_ID: example-2-1
+    :END:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    Input width: 27
+    Input height: 27
+
+    Shape:
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+       ***   ***   ***   ***   
+       ***   ***   ***   ***   
+       ***   ***   ***   ***   
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+       ***   ***   ***   ***   
+       ***   ***   ***   ***   
+       ***   ***   ***   ***   
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+       ***   ***   ***   ***   
+       ***   ***   ***   ***   
+       ***   ***   ***   ***   
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+       ***   ***   ***   ***   
+       ***   ***   ***   ***   
+       ***   ***   ***   ***   
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+    ***   ***   ***   ***   ***
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
