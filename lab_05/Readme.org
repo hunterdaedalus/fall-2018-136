@@ -165,13 +165,6 @@ Then one can find the maximum of thee integers, for example, like this:
   </div>
 #+END_HTML
 
-** Execution of a function
-call
-   :PROPERTIES:
-   :CUSTOM_ID: execution-of-a-function-call
-   :END:
-
-[[./LAB%205_files/1NZjPha.png]]
 
 ** Task A. IsDivisible?
    :PROPERTIES:
