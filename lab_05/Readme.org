@@ -70,8 +70,8 @@ example, if you want to compute the sum of 500, 600, and 700, you can
 write: =sum(500, 600, 700)=.
 
 *** A complete program
-example:[[https://maryash.github.io/135/labs/lab_05.html#a-complete-program-example][]]
-    :PROPERTIES:
+example:
+:PROPERTIES:
     :CUSTOM_ID: a-complete-program-example
     :END:
 
@@ -110,7 +110,7 @@ example:[[https://maryash.github.io/135/labs/lab_05.html#a-complete-program-exam
 #+END_HTML
 
 *** Let's define a function that computes the maximum of two
-integers:[[https://maryash.github.io/135/labs/lab_05.html#lets-define-a-function-that-computes-the-maximum-of-two-integers][]]
+integers:
     :PROPERTIES:
     :CUSTOM_ID: lets-define-a-function-that-computes-the-maximum-of-two-integers
     :END:
@@ -166,15 +166,14 @@ Then one can find the maximum of thee integers, for example, like this:
 #+END_HTML
 
 ** Execution of a function
-call[[https://maryash.github.io/135/labs/lab_05.html#execution-of-a-function-call][]]
+call
    :PROPERTIES:
    :CUSTOM_ID: execution-of-a-function-call
    :END:
 
 [[./LAB%205_files/1NZjPha.png]]
 
-** Task A. Is
-divisible?[[https://maryash.github.io/135/labs/lab_05.html#task-a-is-divisible][]]
+** Task A. IsDivisible?
    :PROPERTIES:
    :CUSTOM_ID: task-a-is-divisible
    :END:
@@ -205,7 +204,7 @@ If =n= is divisible by =d=, the function should return =true=, otherwise
 return =false=.
 
 *** For
-example:[[https://maryash.github.io/135/labs/lab_05.html#for-example][]]
+example:
     :PROPERTIES:
     :CUSTOM_ID: for-example
     :END:
@@ -251,8 +250,7 @@ example:[[https://maryash.github.io/135/labs/lab_05.html#for-example][]]
 #+END_HTML
 
 
-** Task B. Is a
-prime?[[https://maryash.github.io/135/labs/lab_05.html#task-b-is-a-prime][]]
+** Task B. IsPrime?
    :PROPERTIES:
    :CUSTOM_ID: task-b-is-a-prime
    :END:
@@ -292,9 +290,8 @@ add a function
 The function should return =true= if =n= is a prime, otherwise return
 =false=. Change the =main= function to test your new code.
 
-** Task C. Next
-prime[[https://maryash.github.io/135/labs/lab_05.html#task-c-next-prime][]]
-   :PROPERTIES:
+** Task C. NextPrime
+:PROPERTIES:
    :CUSTOM_ID: task-c-next-prime
    :END:
 
@@ -370,9 +367,8 @@ example:[[https://maryash.github.io/135/labs/lab_05.html#for-example-1][]]
 
 Change the =main= function to test the new code.
 
-** Task D. Count primes in
-range[[https://maryash.github.io/135/labs/lab_05.html#task-d-count-primes-in-range][]]
-   :PROPERTIES:
+** Task D. CountPrimes in range
+:PROPERTIES:
    :CUSTOM_ID: task-d-count-primes-in-range
    :END:
 
@@ -401,9 +397,8 @@ Add a function
 that returns the number of prime numbers in the interval /a ≤ x ≤ b/.
 Change the =main= function to test the new code.
 
-** Task E. Is a twin
-prime?[[https://maryash.github.io/135/labs/lab_05.html#task-e-is-a-twin-prime][]]
-   :PROPERTIES:
+** Task E. isTwinPrime?
+:PROPERTIES:
    :CUSTOM_ID: task-e-is-a-twin-prime
    :END:
 
@@ -438,9 +433,8 @@ Add a function
 that determines whether or not its argument is a twin prime. Change the
 =main= function to test the new code.
 
-** Task F. Next twin
-prime[[https://maryash.github.io/135/labs/lab_05.html#task-f-next-twin-prime][]]
-   :PROPERTIES:
+** Task F. nextTwinPrime
+:PROPERTIES:
    :CUSTOM_ID: task-f-next-twin-prime
    :END:
 
@@ -469,9 +463,8 @@ Add a function
 that returns the smallest twin prime greater than =n=. Change the =main=
 function to test the new code.
 
-** Task G. Largest twin prime in
-range[[https://maryash.github.io/135/labs/lab_05.html#task-g-largest-twin-prime-in-range][]]
-   :PROPERTIES:
+** Task G. largestTeinPrime
+:PROPERTIES:
    :CUSTOM_ID: task-g-largest-twin-prime-in-range
    :END:
 
