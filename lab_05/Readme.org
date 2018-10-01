@@ -27,9 +27,9 @@ labs:
   :CUSTOM_ID: lab-5-functions-and-prime-numbers
   :END:
 
-[[./LAB%205_files/xCJ6OFq.jpg]]
+[[https://i.imgur.com/xCJ6OFq.jpg]]
 
-** Introduction[[https://maryash.github.io/135/labs/lab_05.html#introduction][]]
+** Introduction
    :PROPERTIES:
    :CUSTOM_ID: introduction
    :END:
