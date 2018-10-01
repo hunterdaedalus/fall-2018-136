@@ -1,0 +1,584 @@
+#+BEGIN_HTML
+  <div id="MathJax_Message" style="display: none;">
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="container-lg px-3 my-5 markdown-body">
+#+END_HTML
+
+* Lab 5. Functions and Prime Numbers
+** IMPORANT NOTES
+This lab should conform to the specifications we outlined for previous
+labs:
+- Readme.md or Readme.org with any notes or information you have to
+  share with me.
+- Makefile with targets *main*, *tests*, and *clean* (and others if
+  you'd like)
+- The main program should run to show the program works without user
+  input.
+- The tests should likewise make it clear that each task works as specified.
+
+
+  :PROPERTIES:
+  :CUSTOM_ID: lab-5-functions-and-prime-numbers
+  :END:
+
+[[./LAB%205_files/xCJ6OFq.jpg]]
+
+** Introduction[[https://maryash.github.io/135/labs/lab_05.html#introduction][]]
+   :PROPERTIES:
+   :CUSTOM_ID: introduction
+   :END:
+
+A *function* is a named sequence of instructions that performs a
+specific task and returns the result of its computation. Once defined,
+it can be then *called* in your program wherever that particular task
+should be performed.
+
+A function can receive zero or more arguments. For example, consider a
+function =sum=, which receives three arguments, here named =a=, =b=, and
+=c=, and returns their sum:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    int sum(int a, int b, int c) { 
+        return a + b + c;        
+    }
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+To execute (or *call*) a function, you must supply its arguments. For
+example, if you want to compute the sum of 500, 600, and 700, you can
+write: =sum(500, 600, 700)=.
+
+*** A complete program
+example:[[https://maryash.github.io/135/labs/lab_05.html#a-complete-program-example][]]
+    :PROPERTIES:
+    :CUSTOM_ID: a-complete-program-example
+    :END:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    #include <iostream>
+
+    using namespace std;
+
+    /* Defining a function that computes the sum of three integers */
+    int sum(int a, int b, int c) { 
+        return a + b + c;          
+    }
+
+    int main() {
+        // We call it with the actual arguments 1, 20, 300,
+        // and save the result in a variable x
+        int x = sum(1, 20, 300);  
+        cout << x << endl;                     // Prints 321
+    }
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+*** Let's define a function that computes the maximum of two
+integers:[[https://maryash.github.io/135/labs/lab_05.html#lets-define-a-function-that-computes-the-maximum-of-two-integers][]]
+    :PROPERTIES:
+    :CUSTOM_ID: lets-define-a-function-that-computes-the-maximum-of-two-integers
+    :END:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    /* Returns the maximum of two arguments */
+    int max2(int a, int b) {
+        if (a > b) {
+            return a;
+        }
+        else {
+            return b;
+        }
+    }
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+Then one can find the maximum of thee integers, for example, like this:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    max2( max2(135, 8763), 500 )   // would return 8763
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+** Execution of a function
+call[[https://maryash.github.io/135/labs/lab_05.html#execution-of-a-function-call][]]
+   :PROPERTIES:
+   :CUSTOM_ID: execution-of-a-function-call
+   :END:
+
+[[./LAB%205_files/1NZjPha.png]]
+
+** Task A. Is
+divisible?[[https://maryash.github.io/135/labs/lab_05.html#task-a-is-divisible][]]
+   :PROPERTIES:
+   :CUSTOM_ID: task-a-is-divisible
+   :END:
+
+Write a function:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    bool isDivisibleBy(int n, int d);
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+If =n= is divisible by =d=, the function should return =true=, otherwise
+return =false=.
+
+*** For
+example:[[https://maryash.github.io/135/labs/lab_05.html#for-example][]]
+    :PROPERTIES:
+    :CUSTOM_ID: for-example
+    :END:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    isDivisibleBy(100, 25) == true
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    isDivisibleBy(35, 17) == false
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+
+** Task B. Is a
+prime?[[https://maryash.github.io/135/labs/lab_05.html#task-b-is-a-prime][]]
+   :PROPERTIES:
+   :CUSTOM_ID: task-b-is-a-prime
+   :END:
+
+A *prime* number is an integer greater or equal to 2 that is only
+divisible by 1 and by itself. The first few primes are: 2, 3, 5, 7, 11,
+13, 17, 19, 23, 29, 31, 37, 41, 43, 47 ...
+
+#+BEGIN_QUOTE
+  */N/ is a prime* if and only if *it is not divisible* evenly by any of
+  the numbers from 2 to /N/−1. Let's implement this decision as a
+  function.
+#+END_QUOTE
+
+add a function
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    bool isPrime(int n);
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+The function should return =true= if =n= is a prime, otherwise return
+=false=. Change the =main= function to test your new code.
+
+** Task C. Next
+prime[[https://maryash.github.io/135/labs/lab_05.html#task-c-next-prime][]]
+   :PROPERTIES:
+   :CUSTOM_ID: task-c-next-prime
+   :END:
+
+Add a function
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    int nextPrime(int n);
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+that returns the smallest prime greater than =n=.
+
+*** For
+example:[[https://maryash.github.io/135/labs/lab_05.html#for-example-1][]]
+    :PROPERTIES:
+    :CUSTOM_ID: for-example-1
+    :END:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    nextPrime(14) == 17
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    nextPrime(17) == 19
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+Change the =main= function to test the new code.
+
+** Task D. Count primes in
+range[[https://maryash.github.io/135/labs/lab_05.html#task-d-count-primes-in-range][]]
+   :PROPERTIES:
+   :CUSTOM_ID: task-d-count-primes-in-range
+   :END:
+
+Add a function
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    int countPrimes(int a, int b);
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+that returns the number of prime numbers in the interval /a ≤ x ≤ b/.
+Change the =main= function to test the new code.
+
+** Task E. Is a twin
+prime?[[https://maryash.github.io/135/labs/lab_05.html#task-e-is-a-twin-prime][]]
+   :PROPERTIES:
+   :CUSTOM_ID: task-e-is-a-twin-prime
+   :END:
+
+A prime number /N/ is called a *twin prime* if either /N/-2 or /N/+2 (or
+both of them) is also a prime.\\
+For example, a prime 17 is a twin prime, because 17+2 = 19 is a prime as
+well.\\
+The first few twin primes are: 3, 5, 7, 11, 13, 17, 19, 29, 31 ...
+
+Add a function
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    bool isTwinPrime(int n);
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+that determines whether or not its argument is a twin prime. Change the
+=main= function to test the new code.
+
+** Task F. Next twin
+prime[[https://maryash.github.io/135/labs/lab_05.html#task-f-next-twin-prime][]]
+   :PROPERTIES:
+   :CUSTOM_ID: task-f-next-twin-prime
+   :END:
+
+Add a function
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    int nextTwinPrime(int n);
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+that returns the smallest twin prime greater than =n=. Change the =main=
+function to test the new code.
+
+** Task G. Largest twin prime in
+range[[https://maryash.github.io/135/labs/lab_05.html#task-g-largest-twin-prime-in-range][]]
+   :PROPERTIES:
+   :CUSTOM_ID: task-g-largest-twin-prime-in-range
+   :END:
+
+Add a function
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    int largestTwinPrime(int a, int b);
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+that returns the largest twin prime in the range /a ≤ N ≤ b/.\\
+If there is no twin primes in range, then return =-1=.
+
+*** For
+example:[[https://maryash.github.io/135/labs/lab_05.html#for-example-2][]]
+    :PROPERTIES:
+    :CUSTOM_ID: for-example-2
+    :END:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    largestTwinPrime(5, 18) == 17
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    largestTwinPrime(1, 31) == 31
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    largestTwinPrime(14, 16) == -1
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+Change the =main= function to test the new code.
+
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+\\
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
