@@ -320,8 +320,8 @@ Add a function
 that returns the smallest prime greater than =n=.
 
 *** For
-example:[[https://maryash.github.io/135/labs/lab_05.html#for-example-1][]]
-    :PROPERTIES:
+example:
+:PROPERTIES:
     :CUSTOM_ID: for-example-1
     :END:
 
@@ -463,7 +463,7 @@ Add a function
 that returns the smallest twin prime greater than =n=. Change the =main=
 function to test the new code.
 
-** Task G. largestTeinPrime
+** Task G. largestTwinPrime
 :PROPERTIES:
    :CUSTOM_ID: task-g-largest-twin-prime-in-range
    :END:
@@ -493,9 +493,8 @@ Add a function
 that returns the largest twin prime in the range /a ≤ N ≤ b/.\\
 If there is no twin primes in range, then return =-1=.
 
-*** For
-example:[[https://maryash.github.io/135/labs/lab_05.html#for-example-2][]]
-    :PROPERTIES:
+*** For example:
+:PROPERTIES:
     :CUSTOM_ID: for-example-2
     :END:
 
