@@ -14,14 +14,11 @@ string encode(string s, int r){
       c = (c + r)%26;
       c = c + 'a';
     }
-
-    if (c >= 'A' && c<='Z'){
+    else if (c >= 'A' && c<='Z'){
       c  = c - 'A';
       c = (c + r)%26;
       c = c + 'A';
     }
-    
-    
     result = result + c;
   }
   return result;
@@ -29,7 +26,14 @@ string encode(string s, int r){
 
 int main()
 {
-  string encoded = encode("Hello World a z A Z",3);
+  string source = "Attack each day with an enthusiasm unkown to mankind";
+  string encoded = encode(source,3);
   cout << encoded << endl;
+
+  for (int i= 0; i < 26; ++i) {
+    cout << i << " : " << encode(encoded,i) << endl;
+  }
+
+
   return 0;
 }
