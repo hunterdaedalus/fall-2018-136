@@ -7,7 +7,7 @@ using std::cout;
 string encode(string s, int r){
   char c;
   string result="";
-  for (int i ; i < s.length(); ++i) {
+  for (int i = 0; i < s.length(); ++i) {
     c = s[i];
     if (c >= 'a' && c<='z'){
       c  = c - 'a';
