@@ -1,0 +1,388 @@
+#+BEGIN_HTML
+  <div id="MathJax_Message" style="display: none;">
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="container-lg px-3 my-5 markdown-body">
+#+END_HTML
+
+* IMPORTANT NOTES
+- You are not required to write *catch* tests for this lab
+- You still need the Makefile with the *main* target
+- Make sure to include *inImage.pgm* in your repo.
+- When *main* is run, your program should create all the specified
+  output image files.
+
+
+* Lab 8. Image Processing
+
+In this lab, we are going to do image manipulation and image filtering.
+Since the pixel data of the images is going to be stored in a 2D array,
+we will also learn how to use 2D arrays.
+
+** Preliminaries & PGM graphical format
+
+We will be using simple
+[[https://en.wikipedia.org/wiki/Netpbm_format][Portable graymap (PGM)]]
+format for our images today, because the code to read and write such
+images is super simple (much simpler than it is for JPEG or PNG).
+
+Please download
+[[https://maryash.github.io/135/labs/inImage.pgm][inImage.pgm]]
+
+To view an image file, use the program =eog= (Eye of Gnome) or some
+other image viewer:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    eog inImage.pgm
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+If you wish to use an alternative image other than the one provided,
+please convert your image file into PGM format using the command
+=convert=:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    convert -compress none dog.png inImage.pgm
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+and for the reverse transformation:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    convert outImage.pgm output-dog.png
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+** 2D arrays for representing grayscale images
+
+[[https://i.imgur.com/IwJC5NP.png]]
+
+** Preliminary Task. Reading and writing pictures. (Don't submit this one)
+
+The supplied program
+[[https://maryash.github.io/135/labs/lab-images.cpp][lab-images.cpp]]
+provides two helper functions for reading and writing images:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    // Reads file 'inImage.pgm' into a 2D array
+    void readImage(int image[MAX_H][MAX_W], int &height, int &width);
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+When called, the function
+
+-  reads the pixel colors into the array, and
+-  updates the variables =height= and =width= with the actual dimensions
+   of the loaded image.
+
+[[https://i.imgur.com/cltpVSZ.png]]
+
+The second supplied function is doing the opposite operation, given an
+array and the dimensions of the actual picture in it, it saves the
+picture into the file =outImage.pgm=:
+
+#+BEGIN_HTML
+  <div class="language-c++ highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    // Writes the array data into file `outImage.pgm`
+    void writeImage(int image[MAX_H][MAX_W], int height, int width)
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+This function expects that all pixel colors are in the range between 0
+and 255 (inclusive), if this is not the case, the program will exit with
+an error.
+
+The =main= function, creates an array =img=, reads the picture from the
+=inImage.pgm= into this array, copies this array to a second array of
+the same dimensions, and writes this second array into the output file
+=outImage.pgm=.
+
+-  *Test that the program works.*
+-  *View the resulting image to make sure it's indeed the same as the
+   original one.*
+
+
+#+BEGIN_HTML
+  <div style="
+    margin-left:-7em; margin-right:-7em;
+    padding:1em;
+    border: #EF0 2px solid;
+  ">
+#+END_HTML
+
+*Warning:* In this lab, *don't* modify function =readImage= and
+, it isalready working perfectly fine. Your goal is to
+change the =main= function, and possibly define your own new functions
+to implement the tasks.
+This is what good program design is about. Each part of your program
+should have clear logic, purpose, and meaning.
+
+* Task before A - writeImage
+ Modify =writeImage= so as to add a single parameter to its specifcation:
+#+BEGIN_SRC c
+voide writeImage(string filename, int image[MAX_H][NMAX_W], int height, int width)
+#+END_SRC
+
+and modify the function so that instead of always writing to a new
+image file named "outImage.pgm" it should write to the filename
+specified in the string parameter.
+
+Make sure  to modify existing calls to =writeImage= in the sample main
+
+* Next Task Before A 
+Make a Makefile (as per usual) with a =main= target to build an
+executable named main. This lab *does not* require catch.hpp based
+unit testss.
+
+
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+** Task A. Invert colors
+
+Add a function  =invert= that inverts all colors, so white
+shades become black, and black become white:
+
+Since black = 0, and white = 255, you should do the following
+transformation for each pixel color:
+
+=0= → =255=\\
+=1= → =254=\\
+=2= → =253=\\
+...\\
+=254= → =1=\\
+=255= → =0=
+
+Example:
+[[http://i.imgur.com/AveQRog.png]]
+[[http://i.imgur.com/rrXjcm3.png]]
+
+
+To test this, create an output image file named *invert.pgm*. 
+
+** Task B. Invert colors in the right
+
+Add a function  =invert_half= that inverts the colors *only in the
+right half* of the picture.
+
+Example:
+
+[[http://i.imgur.com/AveQRog.png]]
+[[http://i.imgur.com/N2KdEMk.png]]
+
+To test this, create an output image file named *inverthalf.pgm*.
+
+** Task C. Add a white box
+
+Add a function =box= that draws a white box exactly in the middle
+of the picture. The dimensions of the box should be 50% by 50% of the
+original picture's width and height.
+
+Example:
+
+[[http://i.imgur.com/AveQRog.png]]
+[[http://i.imgur.com/NNsiNqb.png]]
+
+Since the program should work for all input images that fit into the
+array, don't “hard-code” the cat picture dimensions into the program,
+use variables =w= and =h= instead.
+
+To test this, create an output image file named *box.pgm*
+
+** Task D. One-pixel-thick frame
+
+Add a function =frame=. Same as the previous task, but it should be a frame
+exactly one pixel thick.
+
+Example:
+[[http://i.imgur.com/AveQRog.png]]
+[[http://i.imgur.com/yRZdIu2.png]]
+
+** Task E. Scale 200%
+
+Add a function  =scale. Scale the original picture to 200% of its size. It
+can be done by increasing the size of the picture by the factor of 2,
+and copying each pixel of the input as a small 2x2 square in the output.
+(We don't do any interpolation of colors as more advanced scaling
+procedures would do.)
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    11 22    ->    11 11 22 22
+    33 44          11 11 22 22
+                   33 33 44 44
+                   33 33 44 44
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+Example:
+[[http://i.imgur.com/AveQRog.png]]
+[[http://i.imgur.com/EdOAdDv.png]]
+
+To test this create an output image file named *scale.pgm*
+
+** Task F. Pixelate
+
+Add a function  =pixelate= will be pixelating the input image.
+
+Example:
+
+[[http://i.imgur.com/AveQRog.png]]
+[[http://i.imgur.com/3BpJ5UQ.png]]
+
+One way to pixelate an image is to effectively make every 2x2
+/non-overlapping/ window contain the same value (averaged over all the
+pixels in that window of the input). For example, the following image:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    10 20 30 40
+    11 21 31 41
+    12 22 32 42
+    13 23 33 43
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+should be transformed to:
+
+#+BEGIN_HTML
+  <div class="highlighter-rouge">
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="highlight">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+    16 16 36 36
+    16 16 36 36
+    18 18 37 37
+    18 18 37 37
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+where the 16 was computed by averaging 10, 20, 11, and 21 (after
+rounding), and so on.
+
+For simplicity, assume that the width and the height of the image are
+even numbers, so the picture is divisible into small 2x2 squares, like
+in the example above.
+
+To test this function create an output file named *pixel.pgm*.
+
