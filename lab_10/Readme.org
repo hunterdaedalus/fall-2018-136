@@ -1,0 +1,23 @@
+#+BEGIN_HTML
+  <div id="MathJax_Message" style="display: none;">
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="container-lg px-3 my-5 markdown-body">
+#+END_HTML
+
+* Lab 10. Classes, enums, and movies
+  :PROPERTIES:
+  :CUSTOM_ID: lab-10-classes-enums-and-movies
+  :END:
+** Important notes:
+Complete this lab as specified here:
+https://maryash.github.io/135/labs/lab_10.html
+with the following exceptions:
+- instead of naming the program time.cpp, name it main.c with Makefile
+  and catch tests as usual.
+

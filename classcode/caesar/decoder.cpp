@@ -88,7 +88,7 @@ int main()
 
   cout << decoded << "\n";
 
-  source = "this is a test of";
+  source = "this is a test of ";
   encoded = encode(source,5);
   decoded = decode(encoded,freqs);
   cout << source << "\n";
