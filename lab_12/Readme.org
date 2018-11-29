@@ -1,0 +1,21 @@
+#+BEGIN_HTML
+  <div id="MathJax_Message" style="display: none;">
+#+END_HTML
+
+#+BEGIN_HTML
+  </div>
+#+END_HTML
+
+#+BEGIN_HTML
+  <div class="container-lg px-3 my-5 markdown-body">
+#+END_HTML
+
+* Lab 12. Classes nad programming a social network
+ 
+** Important notes:
+Complete this lab as specified here:
+https://maryash.github.io/135/labs/lab_12.html
+with the following exceptions:
+- instead of writing separate programs as specified in the original
+  lab, write a single program with catch tests as we normally do.
+
